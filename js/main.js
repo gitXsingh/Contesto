@@ -29,14 +29,24 @@ function applyTheme(theme) {
   localStorage.setItem('theme', normalized);
   const themeToggleBtn = document.getElementById('theme-toggle');
   if (themeToggleBtn) {
-    themeToggleBtn.textContent = normalized === 'dark' ? 'Light mode' : 'Dark mode';
+    themeToggleBtn.innerHTML = getThemeIcon(normalized);
     themeToggleBtn.setAttribute('aria-pressed', normalized === 'dark' ? 'true' : 'false');
+    themeToggleBtn.setAttribute('aria-label', normalized === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
   }
 }
 
 function toggleTheme() {
   const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
   applyTheme(current === 'dark' ? 'light' : 'dark');
+}
+
+function getThemeIcon(theme) {
+  if (theme === 'dark') {
+    // Show moon when in dark mode
+    return '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" stroke="currentColor" stroke-width="2" fill="currentColor"/></svg>';
+  }
+  // Show sun when in light mode
+  return '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="5" fill="currentColor"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
 }
 
 function startContest() {
