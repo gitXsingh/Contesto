@@ -2,6 +2,10 @@
 
 **Instant LeetCode-style coding contests in your browser.**  
 Contesto lets anyone quickly generate timed contests using real LeetCode problem links — no setup, no login, no frameworks. Ideal for daily problem-solving sessions, mock interviews, or competitive coding practice.
+---
+
+<img width="480" height="380" alt="image" src="https://github.com/user-attachments/assets/19dbb7c0-92e3-4257-8178-d3463f20affa" /> 
+<img width="480" height="340" alt="image" src="https://github.com/user-attachments/assets/87e7a202-4668-48df-9799-ebced5d683d9" />
 
 ---
 
