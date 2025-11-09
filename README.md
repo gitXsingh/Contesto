@@ -1,71 +1,112 @@
-# CONTESTO
-Instant LeetCode-style contests. Generate a fresh set of problems by difficulty, start a timer, track solved items, and toggle dark mode — all in a clean, responsive UI.
+# Contesto [🔗 Live Demo](https://gitxsingh.github.io/Contesto/)
 
-Demo: https://gitxsingh.github.io/Contesto/
+**Instant LeetCode-style coding contests in your browser.**  
+Contesto lets anyone quickly generate timed contests using real LeetCode problem links — no setup, no login, no frameworks. Ideal for daily problem-solving sessions, mock interviews, or competitive coding practice.
 
-## ✨ Features
-- **One-click contest**: Auto-picks 1 Easy, 2 Medium, 1 Hard from `data/questions.json`
-- **Timer built-in**: Set your own duration and get a simple countdown
-- **Mark as solved**: Toggle solved state inline
-- **Regenerate anytime**: Get a fresh set of problems instantly
-- **Dark mode**: Sun/Moon toggle with system preference + persistence
-- **Lightweight**: Pure HTML/CSS/JS; no frameworks required
+---
 
-## 🚀 Quick Start
-Because the app loads `data/questions.json`, you should run it via a local server (browsers block `fetch` from file://).
+## What You Can Do
 
-- Windows PowerShell (Python 3):
-  ```bash
-  cd D:\PROJECTS\Contesto
-  python -m http.server 5500
-  # Open: http://localhost:5500/
-  ```
-- Or use any static server (Node, VS Code Live Server, etc.).
+- **Generate contests instantly:** Get a new set of problems in one click.  
+- **Pick your duration:** Set a custom contest time before starting.  
+- **Track progress:** Mark questions as solved directly in the interface.  
+- **Switch themes:** Toggle between light and dark mode anytime.  
+- **Regenerate anytime:** Need a new challenge? Refresh instantly.  
+- **Use anywhere:** Works locally or online — just open it in a browser.  
 
-## 🧭 Usage
-1. Open the app and set “Contest Duration (minutes)”
-2. Click “Start Contest”
-3. Work through the links:
-   - Easy → Medium → Hard
-   - Click “Mark as Solved” per question
-4. Need a new set? Use “Regenerate Contest”
-5. Stop anytime with “End Contest”
-6. Toggle theme via the top-right Sun/Moon button
+---
 
-## 🧩 Customization
-- **Change problem set**: Edit `data/questions.json`
-  - Each item should have `title`, `titleSlug`, and `difficulty` (`EASY|MEDIUM|HARD`)
-  - Links are built as `https://leetcode.com/problems/{titleSlug}/`
-- **Default timer**: Controlled in `js/main.js` (defaults to 60)
-- **Styling**: Colors are theme variables in `css/styles.css` (`:root` and `[data-theme="dark"]`)
-- **Branding**: Top-left brand text and font live in `index.html` and `css/styles.css`
+## Why Use Contesto
 
-## 🗂️ Project Structure
-```text
-Contesto/
-├─ index.html          # App shell and UI elements
-├─ css/
-│  └─ styles.css       # Theme variables, layout, components
-├─ js/
-│  └─ main.js          # Contest logic, timer, UI rendering, theme toggle
-└─ data/
-   └─ questions.json   # Problem dataset (E/M/H)
+- **Train like real contests:** Practice timed problem-solving with random sets of Easy, Medium, and Hard questions.  
+- **Perfect for individuals or groups:** Ideal for coding clubs, study sessions, or interview prep groups.  
+- **Lightweight and private:** No data stored or shared — everything runs client-side.  
+- **Customizable:** You can edit the question set, theme, and timer values easily.  
+
+---
+
+## How It Works
+
+Contesto loads problems from a local JSON file and builds a contest set automatically.  
+Each generated round includes:
+- 1 Easy problem  
+- 2 Medium problems  
+- 1 Hard problem  
+
+You solve them directly on LeetCode while the built-in timer tracks your session.
+
+---
+
+## Main Features
+
+| Feature | Description |
+|----------|-------------|
+| **One-Click Contest** | Instantly generate a new contest with random questions. |
+| **Timer** | Choose your contest duration; simple countdown UI. |
+| **Solve Tracking** | Mark each question as solved/un-solved inline. |
+| **Regeneration** | Create a fresh contest anytime. |
+| **Dark Mode** | Auto-detect system theme with manual toggle. |
+| **No Dependencies** | Built with pure HTML, CSS, and JavaScript. |
+
+---
+
+## Project Structure
+
 ```
 
-## ♿ Accessibility
-- High-contrast dark mode
-- Icon toggle with `aria-label` and `aria-pressed`
-- Focus-visible and color variables for readability
+Contesto/
+├─ index.html          # Main app interface
+├─ css/
+│  └─ styles.css       # Theme variables, layout
+├─ js/
+│  └─ main.js          # Contest logic, timer, and UI
+└─ data/
+└─ questions.json   # Local problem dataset
 
-## 🛣️ Roadmap Ideas
-- Persist solved state per session
-- Customizable counts per difficulty
-- Difficulty badges in UI (not only color)
-- Keyboard shortcuts (start/regenerate/end)
-- Export/Share contest set
+````
 
-## 🧪 Tech Stack
-- HTML5, CSS3, Vanilla JavaScript
+---
 
-## 📝 License
-MIT © 2025
+## Tech Stack
+
+- **HTML5**  
+- **CSS3**  
+- **JavaScript (Vanilla)**  
+
+---
+
+## Contributing
+
+Contributions are welcome to improve features, fix bugs, or enhance the UI.
+
+### Steps to Contribute
+1. **Fork** the repository  
+2. **Clone** your fork  
+   ```bash
+   git clone https://github.com/your-username/Contesto.git
+   cd Contesto
+   ```
+
+
+3. **Create a new branch** for your feature or fix
+
+   ```bash
+   git checkout -b feature-name
+   ```
+4. **Commit your changes**
+
+   ```bash
+   git commit -m "Describe your changes"
+   ```
+5. **Push the branch**
+
+   ```bash
+   git push origin feature-name
+   ```
+6. **Open a Pull Request** on the main repository
+
+
+If you have questions, ideas, or want to collaborate, feel free to connect via email:
+📧 **[anmolmeetsingh010@gmail.com](mailto:anmolmeetsingh010@gmail.com)**
+
+```
