@@ -4,10 +4,40 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.start-button').addEventListener('click', startContest);
   document.querySelector('.regenerate-button').addEventListener('click', regenerateContest);
   document.querySelector('.end-button').addEventListener('click', endContest);
+
+  // Theme: initialize and bind toggle
+  initializeTheme();
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', toggleTheme);
+  }
 });
 
 let timerInterval;
 let totalTime = 60; // Default timer duration in minutes
+
+function initializeTheme() {
+  const storedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialTheme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
+  applyTheme(initialTheme);
+}
+
+function applyTheme(theme) {
+  const normalized = theme === 'dark' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', normalized);
+  localStorage.setItem('theme', normalized);
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  if (themeToggleBtn) {
+    themeToggleBtn.textContent = normalized === 'dark' ? 'Light mode' : 'Dark mode';
+    themeToggleBtn.setAttribute('aria-pressed', normalized === 'dark' ? 'true' : 'false');
+  }
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+}
 
 function startContest() {
   console.log('Starting the contest...');
